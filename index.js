@@ -65,7 +65,7 @@ const zooAnimals = [
     let newArray = [];
     nameParam.forEach(function(nameItem){
      let tempobj = {name: nameItem.animal_name, scientific: nameItem.scientific_name}
-     newArray.push(tempobj);
+     newArray.push(`name: ${tempobj.name}, scientific: ${tempobj.scientific}`);
     })
     return newArray
   }
