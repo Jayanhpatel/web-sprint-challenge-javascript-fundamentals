@@ -36,7 +36,7 @@ function summation(summationParam) {
   return sum
 
   }
- console.log(summation(2))
+ //console.log(summation(2))
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -61,12 +61,14 @@ const zooAnimals = [
     3. Return the new array
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
-
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(nameParam){
+    let newArray = [];
+    nameParam.forEach(function(nameItem){
+     let tempobj = {name: nameItem.animal_name, scientific: nameItem.scientific_name}
+     newArray.push(tempobj);
+    })
+    return newArray
   }
-  
-
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
   Use lowerCaseNames to do the following:
@@ -76,9 +78,12 @@ const zooAnimals = [
   🌟 EXAMPLE of returned array: ['jackal, asiatic', .....]
   💡 NOTE: Do some research for other methods that can help help you
   */
-
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(lowerParam){
+    let newArray = []
+    newArray = lowerParam.map(function(x){
+     return x.animal_name.toLowerCase()
+    })
+    return newArray
   }
   
   
@@ -90,8 +95,12 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(popParam){
+    let newArray =[];
+    newArray = popParam.filter(function(x){
+      return x.population < 5
+    })
+    return newArray
   }
   
 
